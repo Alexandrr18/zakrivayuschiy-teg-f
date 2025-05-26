@@ -144,7 +144,8 @@
 
 @supports (-webkit-text-stroke: 1px rgba(255, 255, 255, 1)) {
   .card__label {
-    -webkit-text-stroke: 1px rgba(255, 255, 255, 1)};
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 1)
+  };
 }
 
 .card__paragrah-block {
