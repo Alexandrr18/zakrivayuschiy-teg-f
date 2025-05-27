@@ -10,39 +10,10 @@
 
 */
 
-@keyframes heart-animation {
-  from {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1.25);
-    transform-origin: center;
-  }
-
-  to {
-    transform: scale(1);
-  }
-}
-
-@keyframes spark-animation {
-  from {
-    opacity: 0;
-  }
-
-  50% {
-    opacity: 1;
-  }
-
-  to {
-    opacity: 0;
-  }
-}
-
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-family: var(--font-family-general);
+  font-family: var(--font-family-general), 'sans-serif';
   font-variation-settings: 'wght' var(--weight-family-general-title);
   background-color: var(rgba(255, 255, 255, 1));
   background-image: var(--bg-image-gradient);
@@ -116,10 +87,12 @@
   width: 100%;
   /* min-height: 375px; */
   height: 375px;
+  border-top: 2px solid rgba(0, 0, 0, 1);
+  border-bottom: 2px solid rgba(0, 0, 0, 1);
 }
 
 .card__title {
-  font-family: var(--font-family-general);
+  font-family: var(--font-family-general), 'sans-serif';
   font-size: 18px;
   padding-left: 10px;
   padding: 4px 10px 6px 10px;
@@ -137,7 +110,7 @@
   font-size: 14px;
   top: 22px;
   right: 13px;
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 1);
+  text-shadow: 1px rgba(255, 255, 255, 1);
   mix-blend-mode: hard-light;
   z-index: 1;
 }
@@ -149,7 +122,7 @@
 }
 
 .card__paragrah-block {
-  padding: 21px 25px 25px 25px;
+  padding: 22px 25px 22px 25px;
   display: flex;
   flex-direction: column;
   gap: 27px;
@@ -160,7 +133,7 @@
   font-size: 18px;
   line-height: 21px;
   padding-right: 3px;
-  padding-top: 4px;
+  padding-top: 3px;
 }
 
 .card__paragrah-life-style {
@@ -210,6 +183,7 @@
   color: var(--color-button-text);
   mix-blend-mode: difference;
   z-index: 1;
+  font-size: 14px;
 }
 
 /* фильтры карточек */
@@ -251,11 +225,11 @@
 }
 
 .core {
-  transition: fill 0.3s 0.03s;
+  transition: fill 0.3s linear 0.03s;
 }
 
 .main-body {
-  transition: fill 0.3s 0.05s;
+  transition: fill 0.3s linear 0.05s;
 }
 
 .card__icon-button:hover .core {
@@ -298,7 +272,7 @@
 
 /* состояние кнопок start */
 
-.card__like-button::after {
+.button::after {
   content: '';
   position: absolute;
   top: 0;
@@ -310,14 +284,19 @@
   transition: transform 0.5s ease-in-out;
 }
 
-.card__like-button:hover::after {
+.button:hover::after {
   transform: translateX(0);
 }
 
-.card__like-button:focus {
+.button:focus {
   outline: none;
   box-shadow: 2px 2px 0 rgba(0, 0, 0, 1);
   transition: transform 0.3s ease;
+}
+
+.button:focus-visible {
+  border: 2px solid rgba(0, 0, 0, 1);
+  transition: border 0.3s ease;
 }
 
 .card__icon-button:focus {
@@ -329,75 +308,23 @@
   transition: border 0.3s ease;
 }
 
-.footer__button::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 1);
-  transform: translateX(-100%);
-  transition: transform 0.5s ease-in-out;
-}
-
-.footer__button:hover::after {
-  transform: translateX(0);
-}
-
-.footer__button:focus {
-  outline: none;
-}
-
-.footer__button:focus-visible {
-  border: 2px solid rgba(0, 0, 0, 1);
-  transition: border 0.3s ease;
-}
-
-.footer__button-ok::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 1);
-  transform: translateX(-100%);
-  transition: transform 0.5s ease-in-out;
-}
-
-.footer__button-ok:hover::after {
-  transform: translateX(0);
-}
-
-.footer__button-ok:focus {
-  outline: none;
-}
-
-.footer__button-ok:focus-visible {
-  border: 2px solid rgba(0, 0, 0, 1);
-  transition: border 0.3s ease;
-}
-
-
-
 /* состояние кнопок end */
 
-/* footer start */
+/* section save start */
 
-.footer {
+.save {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 51px;
+  padding-top: 2px;
 }
 
-.footer__button {
+.save__button {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 14px;
   background-color: rgba(255, 255, 255, 1);
   width: 306px;
   height: 84px;
@@ -409,6 +336,7 @@
   margin-bottom: 100px;
   transition: box-shadow 0.3s ease, transform 0.5s ease-in-out;
   position: relative;
+  padding-bottom: 6px;
 }
 
 .button__floppy {
@@ -416,6 +344,7 @@
   color: #fff;
   mix-blend-mode: difference;
   z-index: 1;
+  top: 4px;
 }
 
 .dialog__button__floppy {
@@ -444,7 +373,7 @@ dialog::backdrop {
 
 dialog:open {
   display: grid;
-  grid-template-columns: 40px 235px;
+  grid-template-columns: 40px 196px;
   grid-template-rows: 65px 40px;
   align-items: center;
   align-content: center;
@@ -454,12 +383,12 @@ dialog:open {
   text-transform: uppercase;
 }
 
-.dialog:open .footer__button-ok {
+.dialog:open .save__button-ok {
   grid-column: 1 / -1;
   grid-row: 2;
 }
 
-.footer__button-ok {
+.save__button-ok {
   width: 257px;
   height: 38px;
   border: 2px solid rgba(0, 0, 0, 1);
@@ -469,14 +398,16 @@ dialog:open {
   overflow: hidden;
 }
 
-/* footer end */
+/* section save end */
 
 @media (width >= 376px) {
   .header__container {
     /* max-width: 700px;
     width: 100%;
     height: 368px; */
-    padding: 128px 120.5px;
+    padding: 128px 0;
+    width: 100%;
+    max-width: 700px;
   }
 
   .card {
@@ -489,6 +420,11 @@ dialog:open {
     /* inline-size: 969px; */
   }
 
+  .card__label {
+    top: 27px;
+    right: 26px;
+  }
+
   .card__image-block {
     /* inline-size: 696px; */
     block-size: 696px;
@@ -499,14 +435,23 @@ dialog:open {
     height: 100%;
   }
 
-  .footer__button {
+  .save__button {
     flex-direction: row;
+    align-items: center;
+    gap: 6px;
+    padding-top: 6px;
     width: 335px;
     height: 55px;
   }
 
+  .button__floppy {
+    width: 22px;
+    height: 21px;
+    top: 0;
+  }
+
   .card__paragrah-block {
-    padding: 25px 25px 25px 25px;
+    padding: 25px 25px 23px 25px;
   }
 }
 
