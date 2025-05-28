@@ -55,13 +55,13 @@
 }
 
 .header__title {
-  font-family: var(--font-family-accent);
+  font-family: var(--font-family-accent), fantasy;
   font-weight: 400;
   font-size: clamp(3.063rem, 2.063rem + 3.2vi, 4.063rem);
 }
 
 .header__text {
-  font-family: var(--font-family-accent);
+  font-family: var(--font-family-accent), fantasy;
   font-size: clamp(0.875rem, 0.313rem + 1.8vi, 1.438rem);
   font-weight: 400;
   text-transform: uppercase;
@@ -106,7 +106,7 @@
 
 .card__label {
   position: absolute;
-  font-family: var(--font-family-accent);
+  font-family: var(--font-family-accent), fantasy;
   font-size: 14px;
   top: 22px;
   right: 13px;
@@ -122,7 +122,7 @@
 }
 
 .card__paragrah-block {
-  padding: 22px 25px 22px 25px;
+  padding: 22px 25px 24px 25px;
   display: flex;
   flex-direction: column;
   gap: 27px;
@@ -133,7 +133,7 @@
   font-size: 18px;
   line-height: 21px;
   padding-right: 3px;
-  padding-top: 3px;
+  padding-top: 2px;
 }
 
 .card__paragrah-life-style {
@@ -142,11 +142,6 @@
 
 .card__paragrah-experience {
   padding-right: 2px;
-}
-
-.card__paragrah-my {
-  font-size: 18px;
-  line-height: 21px;
 }
 
 .card__buttons {
@@ -188,7 +183,7 @@
 
 /* фильтры карточек */
 
-.image-html-first {
+.image-html {
   filter: brightness(150%);
 }
 
@@ -219,6 +214,10 @@
 /* main end */
 
 /* svg heart start */
+
+.heart {
+  transform-origin: center;
+}
 
 .sparks {
   opacity: 0;
@@ -329,7 +328,7 @@
   width: 306px;
   height: 84px;
   border: 2px solid rgba(0, 0, 0, 1);
-  font-family: var(--font-family-accent);
+  font-family: var(--font-family-accent), fantasy;
   font-size: 14px;
   line-height: 90%;
   overflow: hidden;
@@ -352,16 +351,20 @@
   color: #fff;
   mix-blend-mode: difference;
   z-index: 1;
+  align-content: end;
+  width: 52px;
+  height: 54px;
+  top: 10px;
 }
 
 .footer__text {
-  font-family: var(--font-family-accent);
+  font-family: var(--font-family-accent), fantasy;
   font-size: 14px;
   line-height: 90%;
 }
 
 .dialog {
-  font-family: var(--font-family-accent);
+  font-family: var(--font-family-accent), fantasy;
   width: 345px;
   height: 195px;
   border: 2px solid rgba(0, 0, 0, 1);
@@ -373,14 +376,15 @@ dialog::backdrop {
 
 dialog:open {
   display: grid;
-  grid-template-columns: 40px 196px;
+  grid-template-columns: 41px 196px;
   grid-template-rows: 65px 40px;
   align-items: center;
   align-content: center;
   justify-content: center;
   justify-items: center;
-  gap: 30px 20px;
+  gap: 30px 12px;
   text-transform: uppercase;
+  line-height: 150%;
 }
 
 .dialog:open .save__button-ok {
@@ -451,7 +455,27 @@ dialog:open {
   }
 
   .card__paragrah-block {
-    padding: 25px 25px 23px 25px;
+    padding: 27px 25px 23px 25px;
+  }
+
+  .dialog {
+    width: 353px;
+    height: 191px;
+  }
+
+  .save__button-ok {
+    width: 293px;
+  }
+
+  .dialog:open {
+    grid-template-columns: 39px 220px;
+    justify-content: center;
+    align-items: end;
+  }
+
+  .dialog__button__floppy {
+    width: 55px;
+    height: 55px;
   }
 }
 
