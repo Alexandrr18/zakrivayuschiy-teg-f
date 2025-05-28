@@ -117,8 +117,9 @@
 
 @supports (-webkit-text-stroke: 1px rgba(255, 255, 255, 1)) {
   .card__label {
-    -webkit-text-stroke: 1px rgba(255, 255, 255, 1)
-  };
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 1);
+    text-shadow: none;
+  }
 }
 
 .card__paragrah-block {
@@ -352,9 +353,8 @@
   mix-blend-mode: difference;
   z-index: 1;
   align-content: end;
-  width: 52px;
-  height: 54px;
-  top: 10px;
+  inline-size: 39px;
+  block-size: 39px;
 }
 
 .footer__text {
@@ -376,13 +376,13 @@ dialog::backdrop {
 
 dialog:open {
   display: grid;
-  grid-template-columns: 41px 196px;
+  grid-template-columns: 39px 196px;
   grid-template-rows: 65px 40px;
   align-items: center;
   align-content: center;
   justify-content: center;
   justify-items: center;
-  gap: 30px 12px;
+  gap: 30px 22px;
   text-transform: uppercase;
   line-height: 150%;
 }
@@ -468,14 +468,15 @@ dialog:open {
   }
 
   .dialog:open {
-    grid-template-columns: 39px 220px;
+    grid-template-columns: 39px 232px;
+    gap: 30px 20px;
     justify-content: center;
-    align-items: end;
+    align-items: center;
   }
 
   .dialog__button__floppy {
-    width: 55px;
-    height: 55px;
+    width: 39px;
+    height: 39px;
   }
 }
 
